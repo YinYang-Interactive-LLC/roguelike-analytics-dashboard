@@ -1,4 +1,4 @@
-import { AppSidebar } from "~/components/app-sidebar"
+import { AppSidebar } from '~/components/app-sidebar';
 
 import {
   Breadcrumb,
@@ -7,17 +7,17 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "~/components/ui/breadcrumb"
+} from '~/components/ui/breadcrumb';
 
-import { Separator } from "~/components/ui/separator"
+import { Separator } from '~/components/ui/separator';
 
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "~/components/ui/sidebar"
+import { SidebarInset, SidebarProvider, SidebarTrigger } from '~/components/ui/sidebar';
 
-export default function Page() {
+export interface PageLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Page({ children }: PageLayoutProps) {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -29,9 +29,7 @@ export default function Page() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
+                  <BreadcrumbLink href="#">Building Your Application</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
@@ -41,15 +39,8 @@ export default function Page() {
             </Breadcrumb>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-          </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
-        </div>
+        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }

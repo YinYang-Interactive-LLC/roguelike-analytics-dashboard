@@ -17,7 +17,8 @@ body {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   overflow: hidden; /* Disable scrolling for the entire page */
   font-family: Inter, sans-serif;
@@ -57,7 +58,6 @@ html, body {
   padding: 10px;
   overflow-y: auto; /* Enable scrolling only in the container */
 }
-
 
 @layer base {
   :root {
@@ -131,7 +131,6 @@ html, body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
 
 @layer base {
   * {
