@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden; /* Disable scrolling for the entire page */
+  font-family: Inter, sans-serif;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent the header from shrinking */
+}
+
+.content {
+  display: flex;
+  flex: 1; /* Allow the content area to take up remaining space */
+  overflow: hidden; /* Prevent scrolling in the main container */
+}
+
+.navbar {
+  background-color: #222;
+  color: #fff;
+  width: 250px;
+  padding: 10px;
+  flex-shrink: 0; /* Prevent navbar from shrinking */
+}
+
+.container {
+  background-color: #444;
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto; /* Enable scrolling only in the container */
+}
